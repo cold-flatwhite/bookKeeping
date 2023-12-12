@@ -17,7 +17,7 @@ const { setBillList } = billStore.actions;
 const getBillList = () => {
   return async (dispatch) => {
     try {
-      const res =await axois.get(`${process.env.REACT_APP_API_URL}/bill`);
+      const res = await axois.get(`${process.env.REACT_APP_API_URL}/bill`);
       dispatch(setBillList(res.data));
     } catch (error) {
       console.log(error);
