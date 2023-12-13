@@ -10,10 +10,14 @@ const billStore = createSlice({
     setBillList(state, action) {
       state.billList = action.payload;
     },
+    addBill(state, action) {
+      state.billList.push(action.payload);
+    },
   },
 });
 
-const { setBillList } = billStore.actions;
+const { setBillList, addBill } = billStore.actions;
+
 const getBillList = () => {
   return async (dispatch) => {
     try {
@@ -25,6 +29,20 @@ const getBillList = () => {
   };
 };
 
+const addBillList = (data) => {
+  return async (dispatch) => {
+    try {
+      const res = await axois.post(
+        `${process.env.REACT_APP_API_URL}/bill`,
+        data
+      );
+      dispatch(addBill(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const reducer = billStore.reducer;
-export { getBillList };
+export { getBillList, addBillList };
 export default reducer;
