@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import "../style/day.scss";
 import { useMemo } from "react";
-// import { billTypeToName } from '@/contants/index'
 import { useState } from "react";
 const DailyBill = ({ date, billList }) => {
   const dayResult = useMemo(() => {
