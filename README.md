@@ -1,5 +1,3 @@
-# bookKeeping
-
 # Bill Tracker App Documentation
 
 ## Overview
